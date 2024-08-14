@@ -1,3 +1,80 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.customScrollBar::-webkit-scrollbar {
+    @apply w-1
+}
+
+.customScrollBar::-webkit-scrollbar-track {
+    @apply w-1 bg-scrollbar-track-color
+}
+
+.customScrollBar::-webkit-scrollbar-thumb {
+    @apply bg-green w-[4px]
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply leading-[140%] font-semibold text-black
+}
+
+h1{
+    @apply text-[27px]
+}
+
+h2{
+    @apply text-[24px]
+}
+
+h3{
+    @apply text-[21px]
+}
+h4{
+    @apply text-[19px]
+}
+
+h5{
+    @apply text-[17px] leading-[150%]
+}
+
+h6{
+    @apply text-[15px] leading-[150%]
+}
+
+span{
+    @apply leading-[140%] font-semibold bg-green text-white
+}
+
+p{
+    @apply text-light-grey leading-[150%] text-[15px]
+}
+
+.Pagination1{
+    @apply h-10 mb-6 text-black
+}
+
+.Pagination1 > ul{
+    @apply h-full gap-2
+}
+
+.Pagination1 > ul > li{
+    @apply bg-white border border-border-color rounded w-10 h-full
+}
+
+.Pagination1 > ul > li > button {
+    @apply bg-white h-full w-full m-0 p-0 flex items-center justify-center
+}
+
+.Pagination1 > ul > li > button > span{
+    @apply bg-transparent border-none rounded-none
+}
+
+.Pagination1 > ul > li > button.Mui-selected, .Pagination1 > ul > li > button:hover {
+    @apply bg-green border-none rounded-none
+}
+
+.Pagination1 > ul > li > button.MuiPaginationItem-ellipsis{
+    @apply bg-transparent
+}
+
+
