@@ -9,11 +9,29 @@ import PaginationComponent from "../components/shared/PaginationComponent.tsx";
 
 const SearchPage = () =>{
     const [searchParams] = useSearchParams()
-    const tag = searchParams.get("tag")
+    const tag = searchParams.get("Tag")
+    const isDescending = searchParams.get("IsDescending")
+    const name = searchParams.get("Name")
+    const surname = searchParams.get("Surname")
+    const title = searchParams.get("Title")
+    const sortBy = searchParams.get("SortBy")
     const [page, setPage] = useState(1);
     const [pageSize] = useState(10);
-    const url = `/api/Blog?Tag=${tag}&PageSize=${pageSize.toString()}&PageNumber=${page.toString()}`
-    const {data: blogs, isLoading, error} = useFetch<BlogsFetch>(url);
+    const url = new URL("/api/Blog", "http://localhost:5184")
+
+    url.searchParams.set("PageSize", pageSize.toString())
+    url.searchParams.set("PageNumber", page.toString())
+
+    if(tag != null) url.searchParams.set("Tag", tag);
+    if(name != null) url.searchParams.set("Name", name);
+    if(surname != null) url.searchParams.set("Surname", surname);
+    if(title != null) url.searchParams.set("Title", title);
+    if(sortBy != null) url.searchParams.set("SortBy", sortBy);
+    if(isDescending != null) url.searchParams.set("IsDescending", isDescending);
+
+
+    const {data: blogs, isLoading, error} = useFetch<BlogsFetch>(url.toString());
+
 
     if(isLoading) return <LoadingComponent/>
     if(error) return <ErrorComponent/>

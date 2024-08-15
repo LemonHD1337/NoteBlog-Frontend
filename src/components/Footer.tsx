@@ -34,23 +34,23 @@ const Footer = () =>{
                     Blogs
                 </FooterColumn.Title>
 
-                <FooterColumn.Link to="/blogs" search={"tag=Travel"} >
+                <FooterColumn.Link to="/blogs" search={"Tag=Travel"} >
                     Travel
                 </FooterColumn.Link>
 
-                <FooterColumn.Link to="/blogs" search={"tag=Technology"}>
+                <FooterColumn.Link to="/blogs" search={"Tag=Technology"}>
                     Technology
                 </FooterColumn.Link>
 
-                <FooterColumn.Link to="/blogs" search={"tag=LifeStyle"}>
+                <FooterColumn.Link to="/blogs" search={"Tag=LifeStyle"}>
                     LifeStyle
                 </FooterColumn.Link>
 
-                <FooterColumn.Link to="/blogs" search={"tag=Fashion"}>
+                <FooterColumn.Link to="/blogs" search={"Tag=Fashion"}>
                     Fashion
                 </FooterColumn.Link>
 
-                <FooterColumn.Link to="/blogs" search={"tag=Business"}>
+                <FooterColumn.Link to="/blogs" search={"Tag=Business"}>
                     Business
                 </FooterColumn.Link>
             </FooterColumn>

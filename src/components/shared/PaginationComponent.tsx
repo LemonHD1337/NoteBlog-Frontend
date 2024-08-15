@@ -35,7 +35,6 @@ const PaginationComponent = (props: PaginationComponentProps) =>{
         }
     }
 
-    if(props.count == 0) return <p>Ops! No record was found</p>
     if(!props.count) return null
 
     return (

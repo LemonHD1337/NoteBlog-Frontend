@@ -31,7 +31,7 @@ const Header = () =>{
                             {tags.map(tag=> {
                                 return (
                                     <li className={"border-dotted border-b-2 border-green my-2 pb-1"} key={tag.id}>
-                                        <Link to={`/blogs?tag=${tag.tagName}`} >
+                                        <Link to={`/blogs?Tag=${tag.tagName}`} >
                                             {tag.tagName}
                                         </Link>
                                     </li>

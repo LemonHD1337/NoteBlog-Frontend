@@ -15,6 +15,7 @@ import FaqPage from "./pages/FaqPage.tsx";
 import TermsAndConditionsPage from "./pages/TermsAndConditionsPage.tsx";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.tsx";
 import SupportPage from "./pages/SupportPage.tsx";
+import SearchWithAdditionalCondition from "./pages/SearchWithAdditionalCondition.tsx";
 
 const router = createBrowserRouter([
     {
@@ -57,6 +58,9 @@ const router = createBrowserRouter([
             },{
                 path: "/privacy policy",
                 element: <PrivacyPolicyPage/>
+            },{
+                path: "/search",
+                element: <SearchWithAdditionalCondition/>
             },
             {
               path: "*",
