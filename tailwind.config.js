@@ -14,6 +14,7 @@ export default {
             "border-color": "#666666",
             "scrollbar-track-color": "#C4C4C4",
             "header-color": "#E8F3F3",
+            "input-border-color": "#94D7D3"
         },
         fontFamily: {
             sans: ["Noto Sans", "sans-serif"],

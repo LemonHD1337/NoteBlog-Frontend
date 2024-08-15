@@ -9,6 +9,12 @@ import NotFoundPage from "./pages/NotFoundPage.tsx";
 import {Tag} from "./interfaces.ts";
 import axios from "axios";
 import SearchPage from "./pages/SearchPage.tsx";
+import AboutPage from "./pages/AboutPage.tsx";
+import ContactPage from "./pages/ContactPage.tsx";
+import FaqPage from "./pages/FaqPage.tsx";
+import TermsAndConditionsPage from "./pages/TermsAndConditionsPage.tsx";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.tsx";
+import SupportPage from "./pages/SupportPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -28,8 +34,29 @@ const router = createBrowserRouter([
                 element: <HomePage />
             },
             {
-                path: "/Blogs",
+                path: "/blogs",
                 element: <SearchPage/>
+            },
+            {
+                path: "/about",
+                element: <AboutPage/>
+            },
+            {
+                path: "/contact",
+                element: <ContactPage/>
+            },
+            {
+                path: "/faq",
+                element: <FaqPage/>
+            },{
+                path: "/terms & conditions",
+                element: <TermsAndConditionsPage/>
+            },{
+                path: "/support",
+                element: <SupportPage/>
+            },{
+                path: "/privacy policy",
+                element: <PrivacyPolicyPage/>
             },
             {
               path: "*",

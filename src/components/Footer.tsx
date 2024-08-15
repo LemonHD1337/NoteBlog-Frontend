@@ -72,7 +72,7 @@ const Footer = () =>{
                     Support
                 </FooterColumn.Link>
 
-                <FooterColumn.Link to={"/Privacy Policy"}>
+                <FooterColumn.Link to={"/privacy policy"}>
                     Privacy Policy
                 </FooterColumn.Link>
             </FooterColumn>

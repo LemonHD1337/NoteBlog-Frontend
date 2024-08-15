@@ -7,7 +7,6 @@ import {IoIosSearch} from "@react-icons/all-files/io/IoIosSearch";
 const Header = () =>{
     const tags = useLoaderData() as Tag[] | [];
     const [dropdownActive, setDropdownActive] = useState<boolean>(false);
-    const [showInputSearch, setShowInputSearch] = useState(false);
 
 
     return(
@@ -31,8 +30,8 @@ const Header = () =>{
                         <ul className={"absolute bg-header-color border border-scrollbar-track-color rounded p-2"} hidden={!dropdownActive}>
                             {tags.map(tag=> {
                                 return (
-                                    <li className={"border-dotted border-b-2 border-green my-2 pb-1"}>
-                                        <Link to={`/blogs?tag=${tag.tagName}`} key={tag.id}>
+                                    <li className={"border-dotted border-b-2 border-green my-2 pb-1"} key={tag.id}>
+                                        <Link to={`/blogs?tag=${tag.tagName}`} >
                                             {tag.tagName}
                                         </Link>
                                     </li>
@@ -52,10 +51,11 @@ const Header = () =>{
                     </span>
                 </p>
 
-                <ul className={"w-1/4 flex items-center justify-between"}>
+                <ul className={"w-1/4 flex items-center justify-evenly"}>
                     <li className={"flex"}>
-                        <IoIosSearch onClick={() => setShowInputSearch(!showInputSearch)} size={"25px"}/>
-                        <input type="text" hidden={!showInputSearch}/>
+                        <Link to={"/search"}>
+                            <IoIosSearch size={"20px"}/>
+                        </Link>
                     </li>
                     <li>
                     <Link to={"/contact"}>Contact</Link>

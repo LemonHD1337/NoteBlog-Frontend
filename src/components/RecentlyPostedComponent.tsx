@@ -3,12 +3,8 @@ import {BlogsFetch} from "../interfaces.ts";
 import LoadingComponent from "./shared/LoadingComponent.tsx";
 import ErrorComponent from "./shared/ErrorComponent.tsx";
 import BlogCardComponent from "./shared/BlogCardComponent.tsx";
-import {Pagination, PaginationItem, PaginationRenderItemParams} from "@mui/material";
 import {useState} from "react";
-
-
-
-
+import PaginationComponent from "./shared/PaginationComponent.tsx";
 
 const RecentlyPostedComponent = () =>{
     const [page, setPage] = useState(1);
@@ -19,36 +15,6 @@ const RecentlyPostedComponent = () =>{
 
     if(isLoading) return <LoadingComponent/>
     if(error) return <ErrorComponent/>
-    if(!recentlyBlogs?.totalPages) return null
-
-
-
-    const renderItem = (item: PaginationRenderItemParams ) => {
-        if(item.type === "next"){
-            return(
-                <PaginationItem
-                    {...item}
-                    onClick={()=> setPage(prevState => prevState + 1)}
-                />
-            )
-        }else if(item.type === "previous"){
-            return(
-                <PaginationItem
-                    {...item}
-                    onClick={()=> setPage(prevState => prevState - 1)}
-                ></PaginationItem>
-            )
-        }else{
-            return(
-                <PaginationItem
-                    {...item}
-                    //@ts-expect-error sss
-                    onClick={()=> setPage(item.page)}
-                />
-            )
-        }
-    }
-
 
     return(
         <div className={"w-full mt-20 flex flex-col items-center"}>
@@ -74,13 +40,7 @@ const RecentlyPostedComponent = () =>{
                     }
                 </div>
             </section>
-            <Pagination
-                page={page}
-                siblingCount={2}
-                count={recentlyBlogs.totalPages}
-                className={"Pagination1"}
-                renderItem={renderItem}
-            />
+            <PaginationComponent count={recentlyBlogs?.totalPages} currentPage={page} setPage={setPage}/>
         </div>
     )
 }
