@@ -3,6 +3,7 @@ import {DefaultProps, TopAuthor} from "../../interfaces.ts";
 import { FaFacebookSquare } from "@react-icons/all-files/fa/FaFacebookSquare";
 import { FaTwitterSquare } from "@react-icons/all-files/fa/FaTwitterSquare";
 import { FaInstagramSquare } from "@react-icons/all-files/fa/FaInstagramSquare";
+import {Avatar} from "@mui/material";
 
 type UserCardProps = {
     topAuthor: TopAuthor
@@ -59,7 +60,7 @@ UserCardComponent.Img = function ImgComponent(props: DefaultProps){
 
 
     return(
-        <img src={context.profileImage || "/src/assets/defaultProfileImage.jpg"} alt="user profile image" className={"object-contain h-20 w-20 border-r-50 " + props.className}/>
+        <Avatar src={context.profileImage || undefined} alt={"User profile picture"} className={"mr-4 " +  props.className} />
     )
 }
 

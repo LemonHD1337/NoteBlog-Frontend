@@ -1,8 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-
-
 import Layout from "./layout/Layout.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
@@ -16,6 +14,8 @@ import TermsAndConditionsPage from "./pages/TermsAndConditionsPage.tsx";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.tsx";
 import SupportPage from "./pages/SupportPage.tsx";
 import SearchWithAdditionalCondition from "./pages/SearchWithAdditionalCondition.tsx";
+import LoginPage from "./pages/LoginPage.tsx";
+import RegisterPage from "./pages/RegisterPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -61,6 +61,14 @@ const router = createBrowserRouter([
             },{
                 path: "/search",
                 element: <SearchWithAdditionalCondition/>
+            },
+            {
+                path: "/login",
+                element: <LoginPage/>
+            },
+            {
+                path: "/register",
+                element: <RegisterPage/>
             },
             {
               path: "*",

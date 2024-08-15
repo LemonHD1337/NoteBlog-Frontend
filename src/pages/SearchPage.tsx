@@ -35,6 +35,7 @@ const SearchPage = () =>{
 
     if(isLoading) return <LoadingComponent/>
     if(error) return <ErrorComponent/>
+    if(blogs?.blogs.length == 0) return <h1 className={"mt-6 text-center"}><span>Ops!</span> no record was found</h1>
 
     return(
         <main className={"w-full h-full flex flex-col items-center"}>

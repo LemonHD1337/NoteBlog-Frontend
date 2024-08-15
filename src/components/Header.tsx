@@ -1,13 +1,26 @@
 import {Link, useLoaderData} from "react-router-dom";
-import {Tag} from "../interfaces.ts";
+import {ISignInCookie, Tag} from "../interfaces.ts";
 import {useState} from "react";
 import {IoIosArrowRoundDown} from "@react-icons/all-files/io/IoIosArrowRoundDown";
 import {IoIosSearch} from "@react-icons/all-files/io/IoIosSearch";
+import useCookie from "../hooks/useCookie.ts";
+import {Avatar} from "@mui/material";
+
+
+
 
 const Header = () =>{
     const tags = useLoaderData() as Tag[] | [];
     const [dropdownActive, setDropdownActive] = useState<boolean>(false);
+    const {value: signInCookieValue} = useCookie<ISignInCookie>("SignIn");
 
+    const conditionalView = () =>{
+        if(!signInCookieValue){
+            return <Link to={"/login"}>Login</Link>
+        }else{
+            return <Avatar />
+        }
+    }
 
     return(
         <header className="h-[70px] w-full bg-header-color flex justify-center">
@@ -61,7 +74,7 @@ const Header = () =>{
                     <Link to={"/contact"}>Contact</Link>
                     </li>
                     <li>
-                        <Link to={"/login"}>Login</Link>
+                        {conditionalView()}
                     </li>
                 </ul>
             </nav>

@@ -6,6 +6,14 @@ export interface AppUser {
     surname: string;
 }
 
+export interface ISignInCookie{
+    Id: string,
+    Name: string,
+    Surname: string,
+    Nickname: string,
+    Role: string[]
+}
+
 export interface Tag {
     id: number;
     tagName: string;
