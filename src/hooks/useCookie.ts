@@ -12,7 +12,7 @@ const useCookie = <T>(name: string) => {
         }
     }, [name])
 
-    return {value}
+    return {value, setValue}
 }
 
 export default useCookie;

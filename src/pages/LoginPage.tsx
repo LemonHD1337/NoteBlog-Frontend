@@ -1,6 +1,8 @@
-import React, {FormEvent, useState} from "react";
+import React, {FormEvent, useContext, useState} from "react";
 import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
+import {CookieContext} from "../context/CookieContext.ts";
+import Cookies from "js-cookie";
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -8,6 +10,7 @@ const LoginPage = () => {
     const [isRemember, setIsRemember] = useState<boolean>(false);
     const [error, setError] = useState('')
     const navigate = useNavigate();
+    const context = useContext(CookieContext);
 
 
     const validation = async () =>{
@@ -29,6 +32,14 @@ const LoginPage = () => {
                 password: password,
                 isRemember: isRemember
             })
+
+            const stringCookie = Cookies.get("SignIn")
+            if(!stringCookie) return;
+
+            const data = JSON.parse(stringCookie);
+
+            context?.setSignInCookie(data);
+
             navigate("/")
         }catch (e){
             console.log(e);

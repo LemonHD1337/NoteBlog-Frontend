@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 .input{
-    @apply border border-input-border-color rounded p-2 w-[250px]
+    @apply border border-input-border-color rounded p-2 my-2
+}
+
+.button{
+ @apply bg-green text-white rounded p-4 my-6
 }
 
 .customScrollBar::-webkit-scrollbar {
