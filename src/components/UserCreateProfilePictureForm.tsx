@@ -39,7 +39,7 @@ const UserCreateProfilePictureForm = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className={"grid grid-cols-1 my-6"}>
+		<form onSubmit={handleSubmit} className={"grid grid-cols-1 my-6 w-[360px]"}>
 			<h1 className={"my-6"}>
 				<span>Update</span> your profile picture
 			</h1>

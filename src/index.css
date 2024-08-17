@@ -18,6 +18,22 @@
     @apply w-1 bg-scrollbar-track-color
 }
 
+.blogSection{
+    @apply my-6 w-4/5
+}
+
+.blogSection > *{
+    @apply my-3 p-2 text-[16px] text-balance
+}
+
+.blogSection > img{
+    @apply w-full
+}
+
+.blogSection > div{
+    @apply h-96 flex justify-center items-center aspect-video m-auto
+}
+
 .customScrollBar::-webkit-scrollbar-thumb {
     @apply bg-green w-[4px]
 }

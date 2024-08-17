@@ -14,6 +14,16 @@ export interface ISignInCookie {
 	Role: string[];
 }
 
+export interface Comment {
+	id: number;
+	content: string;
+	createOn: string | Date;
+	userName: string;
+	name: string;
+	surname: string;
+	profileImage?: string;
+}
+
 export interface Tag {
 	id: number;
 	tagName: string;
@@ -31,6 +41,7 @@ export interface Content {
 	picture?: string;
 	video?: string;
 	blogId: number;
+	layout: number;
 }
 
 export interface Blog {
@@ -70,4 +81,8 @@ export interface IUserDetails {
 	bio?: string;
 	email: string;
 	userName: string;
+}
+
+export interface BlogLayout extends DefaultProps {
+	content: Content;
 }

@@ -19,6 +19,8 @@ import RegisterPage from "./pages/RegisterPage.tsx";
 import UserOptionsPage from "./pages/UserOptionsPage.tsx";
 import WriteBlogPage from "./pages/WriteBlogPage.tsx";
 import LogoutPage from "./pages/LogoutPage.tsx";
+import BlogPage from "./pages/BlogPage.tsx";
+import { Blog } from "./interfaces.ts";
 
 const router = createBrowserRouter([
 	{
@@ -88,6 +90,14 @@ const router = createBrowserRouter([
 			{
 				path: "/user/logout",
 				element: <LogoutPage />,
+			},
+			{
+				path: "blog/:id",
+				element: <BlogPage />,
+				loader: async ({ params }) => {
+					const res = await axios.get<Blog>("/api/Blog/" + params.id);
+					return res.data;
+				},
 			},
 			{
 				path: "*",

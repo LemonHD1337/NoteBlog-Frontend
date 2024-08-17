@@ -56,7 +56,17 @@ UserCardComponent.Img = function ImgComponent(props: DefaultProps) {
 	const context = useUserCardContext();
 	const path = import.meta.env.VITE_URL_UPLOADS;
 
-	return <Avatar src={path + context.profileImage || undefined} alt={"User profile picture"} className={"mr-4 " + props.className} />;
+	return (
+		<Avatar
+			src={context.profileImage ? path + context.profileImage : undefined}
+			alt={"User profile picture"}
+			className={"mr-4 " + props.className}
+			sx={{
+				width: 50,
+				height: 50,
+			}}
+		/>
+	);
 };
 
 UserCardComponent.Links = function LinksComponent(props: DefaultProps) {
