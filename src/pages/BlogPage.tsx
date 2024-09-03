@@ -15,7 +15,7 @@ const BlogPage = () => {
 	const date = new Date(data.createOn);
 	const path = import.meta.env.VITE_URL_UPLOADS;
 
-	const content = data.contents.map(content => {
+	const content = data.contents?.map(content => {
 		switch (content.layout) {
 			case 1:
 				return <BlogLayout1 content={content} key={content.id} />;
@@ -33,9 +33,9 @@ const BlogPage = () => {
 	});
 
 	return (
-		<main className={"w-full min-h-full flex "}>
-			<article className={"w-4/5 h-full flex flex-col items-center my-6"}>
-				<section className={"w-4/5"}>
+		<main className={"w-full min-h-full flex"}>
+			<article className={"w-4/5 h-full p-6"}>
+				<section className={"w-full"}>
 					<p className={"w-fit h-[35px] bg-green p-1 text-white mb-2 "}>{data.tag.tagName}</p>
 					<h1 className={"my-6"}>{data.title}</h1>
 					<div className={"mb-4"}>
@@ -44,7 +44,8 @@ const BlogPage = () => {
 							{date.getDay() + " " + ConvertNumberToMonthName(date.getMonth()) + " " + date.getFullYear()}
 						</p>
 					</div>
-					<img src={path + data.image} alt="main blog image" className={"w-full h-[430px] object-fill"} />
+					<img src={path + data.image} alt="main blog image" />
+
 					<p className={"my-4"}>{data.subtitles}</p>
 				</section>
 				{content}

@@ -19,16 +19,17 @@
 }
 
 .blogSection{
-    @apply my-6 w-4/5
+    @apply max-w-full
 }
 
 .blogSection > *{
-    @apply my-3 p-2 text-[16px] text-balance
+    @apply my-3 text-[16px]
 }
 
-.blogSection > img{
-    @apply w-full
+.blogSection > p{
+    @apply break-words whitespace-normal text-wrap w-full
 }
+
 
 .blogSection > div{
     @apply h-96 flex justify-center items-center aspect-video m-auto

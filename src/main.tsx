@@ -21,6 +21,8 @@ import WriteBlogPage from "./pages/WriteBlogPage.tsx";
 import LogoutPage from "./pages/LogoutPage.tsx";
 import BlogPage from "./pages/BlogPage.tsx";
 import { Blog } from "./interfaces.ts";
+import CreateContentPage from "./pages/CreateContentPage.tsx";
+import UserBlogsPage from "./pages/UserBlogsPage.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -86,6 +88,14 @@ const router = createBrowserRouter([
 			{
 				path: "/user/write blog",
 				element: <WriteBlogPage />,
+			},
+			{
+				path: "/user/create a content/:id",
+				element: <CreateContentPage />,
+			},
+			{
+				path: "/user/blogs",
+				element: <UserBlogsPage />,
 			},
 			{
 				path: "/user/logout",

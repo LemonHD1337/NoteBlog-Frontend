@@ -44,7 +44,7 @@ BlogCardComponent.Title = function TitleComponent(props: DefaultProps) {
 	const blog = useBlogCardContext();
 
 	return (
-		<Link to={"blog/" + blog.id}>
+		<Link to={"/blog/" + blog.id}>
 			<h1 className={"mb-6 " + props.className}>
 				{blog.title} {props.children}
 			</h1>
@@ -56,11 +56,7 @@ BlogCardComponent.Img = function ImgComponent(props: DefaultProps) {
 	const blog = useBlogCardContext();
 
 	return (
-		<img
-			src={import.meta.env.VITE_URL_UPLOADS + blog.image}
-			alt={"blog main picture"}
-			className={" h-[230px] object-contain mb-6 " + props.className}
-		/>
+		<img src={import.meta.env.VITE_URL_UPLOADS + blog.image} alt={"blog main picture"} className={"object-contain " + props.className} />
 	);
 };
 

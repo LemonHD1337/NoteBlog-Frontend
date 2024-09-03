@@ -12,6 +12,7 @@ export interface ISignInCookie {
 	Surname: string;
 	Nickname: string;
 	Role: string[];
+	ProfileImageName?: string;
 }
 
 export interface Comment {
@@ -22,6 +23,7 @@ export interface Comment {
 	name: string;
 	surname: string;
 	profileImage?: string;
+	appUserId: string;
 }
 
 export interface Tag {
@@ -48,7 +50,7 @@ export interface Blog {
 	id: number;
 	title: string;
 	subtitles: string;
-	contents: Content[];
+	contents?: Content[];
 	createOn: string | Date; // Consider using Date type for better handling
 	numberOfViews: number;
 	appUser: AppUser;
