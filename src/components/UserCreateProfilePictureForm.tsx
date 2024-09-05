@@ -5,7 +5,7 @@ import { CookieContext } from "../context/CookieContext.ts";
 const UserCreateProfilePictureForm = () => {
 	const context = useContext(CookieContext);
 	const [file, setFile] = useState<File>();
-	const [error, setError] = useState<string>();
+	const [error, seterror] = useState<string>();
 	const [isUpdating, setIsUpdating] = useState<boolean>(false);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,9 +30,10 @@ const UserCreateProfilePictureForm = () => {
 				},
 			});
 			setFile(undefined);
+			seterror("Your profile has been updated");
 		} catch (e) {
 			console.log(e);
-			setError("Ops! something gone wrong");
+			seterror("Ops! something gone wrong");
 		} finally {
 			setIsUpdating(false);
 		}

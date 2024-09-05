@@ -56,7 +56,7 @@ const UserBlogsPage = () => {
 			} else if (name === "delete") {
 				try {
 					setIsDeleting(true);
-					await axios.delete("/api/Blog" + value);
+					await axios.delete("/api/Blog/" + value);
 				} catch (e) {
 					console.log(e);
 					setError("Ops! something gone wrong!");
@@ -74,12 +74,12 @@ const UserBlogsPage = () => {
 			<h1 className={"mt-6"}>
 				<span>Your</span> posts
 			</h1>
-			<div className={"m-4 mt-6 grid grid-cols-4 gap-3"}>
+			<div className={"m-4 mt-6 grid grid-cols-4 gap-3 md:grid-cols-2 sm:grid-cols-1 "}>
 				{blogs?.blogs.map((blog: Blog) => {
 					return (
 						<BlogCardComponent blog={blog} key={blog.id} className={"w-240[px]"}>
 							<BlogCardComponent.Tag />
-							<BlogCardComponent.Title />
+							<BlogCardComponent.Title className={"break-all"} />
 							<BlogCardComponent.Img className={"h-[250px]"} />
 							<BlogCardComponent.User />
 							<BlogCardComponent.SubTitles />

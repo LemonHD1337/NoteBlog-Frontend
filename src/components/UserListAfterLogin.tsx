@@ -10,10 +10,10 @@ const UserListAfterLogin = () => {
 
 	return (
 		<ul className={"relative"} onMouseEnter={() => setDropdownUserOptions(false)} onMouseLeave={() => setDropdownUserOptions(true)}>
-			<li className={"relative w-full flex justify-center items-center"}>
+			<li className={"relative w-full flex justify-center items-center "}>
 				<Avatar src={cookie?.signInCookie?.ProfileImageName ? path + cookie.signInCookie!.ProfileImageName : undefined} />
 			</li>
-			<div className={"absolute border border-border-color rounded p-2 bg-header-color w-full"} hidden={dropdownUserOptions}>
+			<div className={"absolute border border-border-color rounded p-2 bg-header-color w-full z-50"} hidden={dropdownUserOptions}>
 				<ul>
 					<li className={"py-1 border-b-2 border-dotted border-green"}>
 						<Link to={"/user/options"}>Options</Link>

@@ -98,7 +98,7 @@ const WriteBlogPage = () => {
 
 	return (
 		<main className={"w-full h-full flex justify-center items-center"}>
-			<form onSubmit={handleSubmit} className={"grid grid-cols-1 w-1/5"}>
+			<form onSubmit={handleSubmit} className={"grid grid-cols-1 w-1/5 md:w-3/5"}>
 				<h1 className={"my-4"}>
 					<span>Create</span> a post!
 				</h1>

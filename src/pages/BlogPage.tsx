@@ -34,7 +34,7 @@ const BlogPage = () => {
 
 	return (
 		<main className={"w-full min-h-full flex"}>
-			<article className={"w-4/5 h-full p-6"}>
+			<article className={"w-4/5 md:w-full h-full p-6"}>
 				<section className={"w-full"}>
 					<p className={"w-fit h-[35px] bg-green p-1 text-white mb-2 "}>{data.tag.tagName}</p>
 					<h1 className={"my-6"}>{data.title}</h1>
@@ -52,7 +52,7 @@ const BlogPage = () => {
 				<hr />
 				<CommentsComponent />
 			</article>
-			<aside className={"w-1/5 h-full"}>
+			<aside className={"w-1/5 h-full md:hidden"}>
 				<TopAuthors />
 			</aside>
 		</main>

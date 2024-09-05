@@ -33,7 +33,7 @@ const Header = () => {
 						<span className={"font-normal text-black bg-transparent flex justify-center items-center"}>
 							Categories <IoIosArrowRoundDown size={"20px"} />
 						</span>
-						<ul className={"absolute bg-header-color border border-scrollbar-track-color rounded p-2"} hidden={dropdownActive}>
+						<ul className={"absolute bg-header-color border border-scrollbar-track-color rounded p-2 z-50"} hidden={dropdownActive}>
 							{tags.map(tag => {
 								return (
 									<li className={"border-dotted border-b-2 border-green my-2 pb-1"} key={tag.id}>

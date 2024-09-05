@@ -12,8 +12,8 @@ const FeaturedComponent = () => {
 	if (!featuredBlogs) return <ErrorComponent message={"No data!"} />;
 
 	return (
-		<div className={"w-full h-[720px] bg-light-green flex flex-col items-center justify-center "}>
-			<section className={"w-4/5 h-[550px] "}>
+		<div className={"w-full h-[720px] bg-light-green flex flex-col items-center justify-center"}>
+			<section className={"w-full p-2 h-[550px]"}>
 				<h3 className={"mb-6"}>
 					<span>Featured</span> This Month
 				</h3>

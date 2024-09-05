@@ -7,7 +7,7 @@ const CreateContentPage = () => {
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 	const [file, setFile] = useState<File>();
-	const [layout, setLayout] = useState<string>("");
+	const [layout, setLayout] = useState<string | undefined>("");
 	const [error, setError] = useState("");
 	const [isCreating, setIsCreating] = useState(false);
 
@@ -23,6 +23,11 @@ const CreateContentPage = () => {
 
 		if (e.target instanceof HTMLSelectElement) {
 			const { value } = e.target;
+			if (value === "undefined") {
+				setLayout(undefined);
+				return;
+			}
+
 			setLayout(value);
 		}
 
@@ -31,13 +36,26 @@ const CreateContentPage = () => {
 		}
 	};
 
+	const handleReset = () => {
+		setFile(undefined);
+		setTitle("");
+		setContent("");
+		setLayout(undefined);
+	};
+
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		setError("");
+
 		try {
 			setIsCreating(true);
 			const formData = new FormData();
 			formData.append("Title", title);
 			formData.append("Content", content);
+			if (layout === undefined) {
+				setError("Layout is undefined");
+				return;
+			}
 			formData.append("Layout", layout);
 			formData.append("BlogId", id!);
 
@@ -67,7 +85,7 @@ const CreateContentPage = () => {
 		<main className={"w-full min-h-full flex justify-center items-center"}>
 			<form onSubmit={handleSubmit} className={"w-1/4 grid grid-cols-1"}>
 				<select value={layout} onChange={handleChange} className={"input"}>
-					<option value="0">Choose a layout</option>
+					<option value="undefined">Choose a layout</option>
 					<option value="1">title and content</option>
 					<option value="2">only content</option>
 					<option value="3">title, image and then content</option>
@@ -82,7 +100,7 @@ const CreateContentPage = () => {
 					<button className={"button"} type={"submit"}>
 						{isCreating ? "Creating..." : "Create content"}
 					</button>
-					<button className={"button"} type={"reset"}>
+					<button className={"button"} onClick={handleReset}>
 						reset form
 					</button>
 				</div>

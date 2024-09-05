@@ -45,7 +45,7 @@ UserCardComponent.Bio = function BioComponent(props: DefaultProps) {
 	const topAuthors = useUserCardContext();
 
 	return (
-		<p className={"block h-1/4 overflow-hidden text-ellipsis mb-2 " + props.className}>
+		<p className={"block h-1/4 overflow-hidden text-ellipsis mb-2 w-full" + props.className}>
 			{topAuthors.bio}
 			{props.children}
 		</p>
